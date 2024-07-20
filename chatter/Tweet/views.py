@@ -7,8 +7,8 @@ def index(request):
     return render(request,'index.html')
 
 def tweet_list(request):
-    tweet = Tweet.objects.all().order_by('-created_at')
-    return render(request,'tweet_list.html',{'tweet':tweet})
+    tweets = Tweet.objects.all().order_by('-created_at')
+    return render(request,'tweet_list.html',{'tweets':tweets})
 
 def tweet_create(request):
     if request.method=='POST':
